@@ -1,0 +1,32 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Humber Library</title>
+  <meta charset="UTF-8">
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+  <h1>Welcome to Humber Library</h1>
+  <br>
+  <fieldset class= "form">
+	  <legend>Register with Humber Library</legend>
+	  <form th:action= "@{/verifyRegistration}" th:object="${registerUser}" method ="post">
+	  	<p>Name<span class = "mandatory">*</span>: <input type = "text" th:field = "*{name}" /></p>
+	  	<p>Age<span class = "mandatory">*</span>: <input type = "number" th:field = "*{age}" /></p>
+	  	<p>Username<span class = "mandatory">*</span>: <input type = "text" th:field = "*{username}" /></p>
+	  	<p>Password<span class = "mandatory">*</span>: <input type = "password" th:field = "*{password}" /></p>
+	  	<p>Confirm Password<span class = "mandatory">*</span>: <input type = "password" th:field = "*{confirmPassword}" /></p>
+	  	<p>Profession<span class = "mandatory">*</span>: <input type = "text" th:field = "*{profession}" /></p>
+	  	<p>Address<span class = "mandatory">*</span>: <input type = "text" th:field = "*{address}" /></p>
+	  	<p>City<span class = "mandatory">*</span>: <input type = "text" th:field = "*{city}" /></p>
+	  	<p>State/Province<span class = "mandatory">*</span>: <input type = "text" th:field = "*{state}" /></p>
+	  	<p>Country<span class = "mandatory">*</span>: <input type = "text" th:field = "*{country}" /></p>
+	  	<p>Mobile<span class = "mandatory">*</span>: <input type = "number" th:field = "*{mobile}" /></p>
+	  	<input class= "button" type = "submit" value = "Register" />
+	  	<p class="error" th:text = "${errorMessage}"></p>
+	  </form>
+	  <br/>
+	  <a class= "link-1" href = "/">Already have an account?</a>
+  </fieldset>
+</body>
+</html>

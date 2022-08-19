@@ -1,0 +1,42 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Humber Library</title>
+	<meta charset="UTF-8">
+	<link th:href="@{../css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<div th:replace="Fragments/header :: header(${username})"></div>
+	<br>
+	<div th:replace="customer/navbar :: navbar"></div>
+	<br>
+	<div id="main">
+		<div class="container-2">
+			<h3 class="center-title">List of Books</h3>
+			<table border="1" class="list-books">
+				<tr>
+					<th>Title</th>
+					<th>Category</th>
+					<th>Author</th>
+					<th>Publisher</th>
+					<th>Page Count</th>
+					<th>ISBN</th>
+				</tr>
+				<tr th:each="book: ${books}">
+					<td th:text="${book.title}" />
+					<td th:text="${book.category}" />
+					<td th:text="${book.author}" />
+					<td th:text="${book.publisher}" />
+					<td th:text="${book.pageCount}" />
+					<td th:text="${book.isbn}" />
+				</tr>
+			</table>
+			<br>
+		</div>
+		<div th:replace="Fragments/footer :: footer"></div>
+	</div>
+</body>
+
+</html>

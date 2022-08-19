@@ -1,0 +1,41 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Humber Library</title>
+	<meta charset="UTF-8">
+	<style>
+		body {
+			width: 50%;
+			height: 50%;
+			background-image: url('/images/humber.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			opacity: 1;
+		}
+		p {
+			color: white;
+			font-weight:800
+		}
+	</style>
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="home-container">
+		<br><br><br><br><br><br><br>
+		<fieldset class="login-form">
+			<legend>Login</legend>
+			<form th:action="@{/home}" th:object="${loginUser}" method="post">
+				<p>Username: <input type="text" th:field="*{username}" /></p>
+				<p>Password: <input type="password" th:field="*{password}" /></p>
+				<input class="button" type="submit" value="Login" />
+				<p class="error" th:text="${errorMessage}"></p>
+			</form>
+			<br />
+			<a class="link-1" th:href="@{/register}">Don't have Account?</a>
+		</fieldset>
+	</div>
+</body>
+
+</html>

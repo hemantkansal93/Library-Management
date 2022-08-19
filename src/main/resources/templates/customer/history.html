@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Humber Library</title>
+	<meta charset="UTF-8">
+	<link th:href="@{../css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<div th:replace="Fragments/header :: header(${username})"></div>
+	<br>
+	<div th:replace="customer/navbar :: navbar"></div>
+	<br>
+	<div id="main">
+		<div class="container-2" th:if="${#lists.isEmpty(reservations)}">
+			<p class="error" th:text="${errorMessage}"></p>
+		</div>
+		<div class="container-2" th:unless="${#lists.isEmpty(reservations)}">
+			<h3 class="center-title">History</h3>
+			<table border="1" class="list-books">
+				<tr>
+					<th>Transaction Id</th>
+					<th>Title</th>
+					<th>Category</th>
+					<th>Author</th>
+					<th>Publisher</th>
+					<th>Page Count</th>
+					<th>ISBN</th>
+					<th>Borrow Date</th>
+					<th>Action/Status</th>
+				</tr>
+				<tr th:each="reservation: ${reservations}">
+					<td th:text="${reservation.transactionId}" />
+					<td th:text="${reservation.title}" />
+					<td th:text="${reservation.category}" />
+					<td th:text="${reservation.author}" />
+					<td th:text="${reservation.publisher}" />
+					<td th:text="${reservation.pageCount}" />
+					<td th:text="${reservation.isbn}" />
+					<td th:text="${reservation.formattedBorrowDate}" />
+					<span th:if="${reservation.returnDate == null}">
+						<td class="return-book-link"><a th:href="|return/book?bookId=${reservation.resourceId}|">Return</a></td>
+					</span>
+					<span th:unless="${reservation.returnDate == null}">
+						<td th:text="${reservation.formattedReturnDate}" />
+					</span>
+				</tr>
+			</table>
+			<p class="success" th:text="${message}"></p>
+		</div>
+		<div th:replace="Fragments/footer :: footer"></div>
+	</div>
+</body>
+
+</html>

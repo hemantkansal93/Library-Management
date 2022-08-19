@@ -1,0 +1,41 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Humber Library</title>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div th:replace="Fragments/header :: header(${username})"></div>
+	<br>
+	<div th:replace="admin/users/navbars/navbar :: navbar"></div>
+	<br>
+	<div id="main">
+		<div class="container-2">
+			<fieldset>
+				<legend>Modify user</legend>
+				<form th:action="@{/admin/users/updateUser/{id}(id=${user.username})}" th:object="${user}"
+					method="post">
+					<p>Name: <input type="text" th:field="*{name}" /></p>
+					<p>Age: <input type="number" th:field="*{age}" /></p>
+					<p>Username: <input readonly type="text" th:field="*{username}" /></p>
+					<p>Password: <input type="password" th:field="*{password}" /></p>
+					<p>Confirm Password: <input type="password" th:field="*{confirmPassword}" /></p>
+					<p>Profession: <input type="text" th:field="*{profession}" /></p>
+					<p>Address: <input type="text" th:field="*{address}" /></p>
+					<p>City: <input type="text" th:field="*{city}" /></p>
+					<p>State/Province: <input type="text" th:field="*{state}" /></p>
+					<p>Country: <input type="text" th:field="*{country}" /></p>
+					<p>Mobile: <input type="number" th:field="*{mobile}" /></p>
+					<input class= "button" type="submit" value="Update User" />
+				</form>
+			</fieldset>
+			<br>
+		</div>
+		<div th:replace="Fragments/footer :: footer"></div>
+	</div>
+</body>
+
+</html>

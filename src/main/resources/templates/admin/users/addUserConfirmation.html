@@ -1,0 +1,21 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Humber Library</title>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<div th:replace="Fragments/header :: header(${username})"></div>
+	<br>
+	<div th:replace="admin/users/navbars/navbar :: navbar"></div>
+	<br>
+	<div id="main">
+		<div class="container-2">
+			<h3 class="sucesss-message">You have successfully added user into Humber Library</h3>
+		</div>
+		<div th:replace="Fragments/footer :: footer"></div>
+	</div>
+</html>

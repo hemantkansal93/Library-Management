@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Humber Library</title>
+	<meta charset="UTF-8">
+	<link th:href="@{../css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<div th:fragment="header(username)">
+		<h1 id="main-header">Welcome to Humber Library</h1>
+		<br>
+		<ul class="container-1">
+			<li id="greeting" th:text="'Hi ' + ${username}"></li>
+			<li id="logout"><a class="link-1" href="/logout">Logout</a></li>
+		</ul>
+	</div>
+</body>
+
+</html>

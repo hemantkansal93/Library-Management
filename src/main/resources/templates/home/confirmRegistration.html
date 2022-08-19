@@ -1,0 +1,19 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Humber Library</title>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<div th:replace="Fragments/header :: header(${username})"></div>
+	<br>
+	<div th:replace="admin/navbar-after-registration :: navbar"></div>
+	<br>
+	<div id="main">
+		<h3 class="sucesss-message">You have successfully registered for Punjabi Library</h3>
+</body>
+
+</html>

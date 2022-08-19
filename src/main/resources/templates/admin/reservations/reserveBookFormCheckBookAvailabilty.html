@@ -1,0 +1,60 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Humber Library</title>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div th:replace="Fragments/header :: header(${username})"></div>
+	<br>
+	<div th:replace="admin/reservations/navbar :: navbar"></div>
+	<br>
+	<div id="main">
+		<div class="container-2">
+			<fieldset>
+				<legend>Reserving a book</legend>
+				<form th:action="@{/admin/reserve/getBooks}" th:object="${book}" method="post">
+					<p>ISBN: <input type="text" th:field="*{isbn}" /></p>
+					<p>Title: <input type="text" th:field="*{title}" /></p>
+					<p>Category: <input type="text" th:field="*{category}" /></p>
+					<p>Author: <input type="text" th:field="*{author}" /></p>
+					<p>Publisher: <input type="text" th:field="*{publisher}" /></p>
+					<input class="button" type="submit" value="Next" />
+					<p class="error" th:text="${errorMessage}"></p>
+				</form>
+				<div th:if="${errorMessage ==''}">
+					<div th:unless="${#lists.isEmpty(books)}">
+						<table border="1">
+							<tr>
+								<th>Title</th>
+								<th>Category</th>
+								<th>Author</th>
+								<th>Publisher</th>
+								<th>Page Count</th>
+								<th>ISBN</th>
+								<th colspan="2">Action</th>
+							</tr>
+							<tr th:each="b: ${books}">
+								<td th:text="${b.title}" />
+								<td th:text="${b.category}" />
+								<td th:text="${b.author}" />
+								<td th:text="${b.publisher}" />
+								<td th:text="${b.pageCount}" />
+								<td th:text="${b.isbn}" />
+								<td class="reserve-book-link"><a th:href="|book?bookId=${b.resourceId}|">Reserve</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+			</fieldset>
+			<br>
+		</div>
+		<div th:replace="Fragments/footer :: footer"></div>
+	</div>
+</body>
+
+</html>

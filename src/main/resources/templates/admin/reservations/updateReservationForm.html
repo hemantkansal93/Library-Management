@@ -1,0 +1,37 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Humber Library</title>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div th:replace="Fragments/header :: header(${username})"></div>
+	<br>
+	<div th:replace="admin/reservations/navbar :: navbar"></div>
+	<br>
+	<div id="main">
+		<div class="container-2">
+			<fieldset>
+				<legend>Modify registration</legend>
+				<form th:action="@{/admin/reservations/updateReservation}" th:object="${reservation}" method="post">
+					<p>Transaction Id: <input readonly type="text" th:field="*{transactionId}" /></p>
+					<p>Username: <input readonly type="text" th:field="*{username}" />
+					</p>
+					<p>Resource Id: <input readonly type="text" th:field="*{resourceId}" /></p>
+					<p>Borrow Date: <input type="date" th:field="*{borrowDate}" /></p>
+					<p>Return Date: <input readonly type="text" th:field="*{returnDate}" /></p>
+					<p>Who reserved: <input readonly type="text" th:field="*{whoReserved}" /></p>
+					<input class="button" type="submit" value="Update Reservation" />
+				</form>
+				<br />
+			</fieldset>
+			<br>
+		</div>
+		<div th:replace="Fragments/footer :: footer"></div>
+	</div>
+</body>
+
+</html>

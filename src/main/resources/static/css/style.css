@@ -1,0 +1,187 @@
+*{
+	color: rgb(0, 26, 0);
+}
+input:read-only {
+  background-color: lightgrey;
+}
+.container-2{
+	min-height:370px;
+}
+a{
+	text-decoration: none;
+}
+fieldset{
+	border-radius:8px;
+}
+#main-header{
+	color: rgb(255, 245, 189);
+	background-color: rgb(0, 26, 0);
+	text-align:center;
+	height:60px;
+	margin:0;
+	padding-top:20px;
+}
+
+
+.mandatory{
+	color:red;
+}
+
+.error{
+	color:red;
+}
+container-1{
+	border:1px solid rgb(0, 26, 0);
+	border-radius:8px;
+	color: rgb(0, 26, 0);
+	height:40px;
+	padding:10px;
+}
+
+
+#logout{
+	float:right;
+}
+#greeting{
+	font-weight:800;
+	float: left;
+}
+
+
+.container-1{
+	height:50px;
+	display: inline;
+	list-style-type: none;
+	margin: 10px;
+	padding: 0;
+	width:100%;
+	
+}
+
+
+.form, input{
+	border-radius:4px;
+	border-color: rgb(0, 26, 0);
+}
+
+legend{
+	color: rgb(0, 26, 0);
+	font-size:18px;
+	font-style: italic;
+}
+
+.button, input[type='submit']{
+	background-color: rgb(0, 26, 0);
+	color: rgb(255, 245, 189);
+	padding:5px;
+	text-decoration: none;
+	
+}
+
+.link-1, .link-2{
+	color: rgb(0, 26, 0);
+	background-color: rgb(255, 245, 189);
+	padding:5px;
+	border-radius:8px;
+	text-decoration: none;
+}
+.link-2{
+	display: block;
+	margin:10px;
+}
+.link-3{
+	color: rgb(255, 245, 189);
+	padding:5px;
+	text-decoration: none;
+	font-size:24px;
+	text-align:center;
+}
+.admin-menu, .user-menu{
+  display:inline-block;
+  height:50px;
+  width:180px;
+  margin:50px;
+  color:  rgb(255, 245, 189);
+  background-color: rgb(0, 26, 0);
+  text-decoration: none;
+  border-radius: 8px;
+  padding-top: 20px;
+  text-align:center;
+  margin-top:100px;
+}
+#admin-menu-list{
+	margin-left:240px;
+}
+.nav-bar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width:100%;
+  background-color: rgb(0, 26, 0);
+  height:50px;
+}
+
+.menu-item{
+	float: left;
+}
+.list-books{
+	border-radius:4px;
+	margin:auto;
+}
+.center-title{
+	text-align: center;
+	font-size:24px;
+}
+#footer{
+   width: 100%;
+   line-height:24px;
+   height: 75px;
+   text-align:center;
+   color:  rgb(255, 245, 189);
+   background-color: rgb(0, 26, 0);
+}
+th, td{
+	padding:5px;
+}
+th{
+	color:  rgb(255, 245, 189);
+    background-color: rgb(0, 26, 0);
+}
+
+.return-book-link, .reserve-book-link{
+	background-color:  rgb(255, 245, 189);
+}
+.slim-spacing{
+	line-height:100px;
+}
+.edit-link{
+	background-color: rgb(255, 255, 132);
+	width:40px;
+	padding-left:12px;
+}
+.delete-link{
+	background-color: rgb(255, 102, 102);
+	width:40px;
+}
+.message{
+	text-align:center;
+	color:red;
+}
+.sucesss-message{
+	text-align:center;
+	color: green;
+}
+
+#user-menu-list{
+	margin-left:340px;
+}
+.pending-status{
+	text-align: center;
+	color:red
+}
+.login-form{
+	border: 4px solid white;
+}
+.login-form legend{
+	color:white
+}
